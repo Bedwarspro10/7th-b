@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://img.freepik.com/free-vector/gradient-network-connection-background_23-2148865393.jpg?w=996&t=st=1708087144~exp=1708087744~hmac=0e747f31e48837c7e80616a1e49d325d0b605814c5909d50d04f4f144a41294c');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .login-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  .input-group {
+    margin-bottom: 20px;
+  }
+  input[type="text"], input[type="password"] {
+    padding: 10px;
+    width: 250px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+  }
+  .login-btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .login-btn:hover {
+    background-color: darkgreen;
+  }
+  .loading {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top-color: green;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    display: none;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .dont-know-link {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="login-container" id="login-container">
+  <h4>Login to 7th-b</h4>
+  <div class="input-group">
+    <input type="text" id="username" placeholder="Username">
+  </div>
+  <div class="input-group">
+    <input type="password" id="password" placeholder="Password">
+  </div>
+  <div>
+    <span class="dont-know-link" onclick="forgotPassword()">I don't know</span>
+  </div>
+  <button class="login-btn" onclick="login()">Login</button>
+</div>
+<div class="loading" id="loading"></div>
+
+<script>
+  function login() {
+    var username = document.getElementById('username').value.toLowerCase();
+    var password = document.getElementById('password').value.toLowerCase();
+    if (username === '7th b' && password === 'qa1234') {
+      document.getElementById('login-container').style.display = 'none';
+      document.getElementById('loading').style.display = 'block';
+      setTimeout(function() {
+        window.location.href = 'https://bedwarspro10.github.io/PowerBG/';
+      }, 2000);
+    } else {
+      alert('Something went wrong. Please check your username and password.');
+    }
+  }
+  
+  function forgotPassword() {
+    alert("You need to ask the user ID and password from 'ujjawal'.");
+  }
+</script>
+
+</body>
+</html>
